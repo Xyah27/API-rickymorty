@@ -77,14 +77,31 @@
 .icon-location { color: #83D2E4; }
 .icon-episodes { color: #E5D29F; }
 
-.close-btn {
+// Botón flotante X para cerrar modal
+.close-fab {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1001;
+  background: #1a1c1e;
+  border: 2px solid #8BCF21;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+
   ion-icon {
-    font-size: 1.8rem;
     color: #8BCF21;
+    font-size: 2rem;
   }
 
-  &:hover ion-icon {
-    color: #a0dc42;
-    transform: scale(1.1);
+  &:hover {
+    box-shadow: 0 4px 20px rgba(139,207,33,0.18);
+    border-color: #2F9331;
   }
 }
