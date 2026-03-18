@@ -76,3 +76,15 @@
 .icon-origin { color: #2F9331; }
 .icon-location { color: #83D2E4; }
 .icon-episodes { color: #E5D29F; }
+
+.close-btn {
+  ion-icon {
+    font-size: 1.8rem;
+    color: #8BCF21;
+  }
+
+  &:hover ion-icon {
+    color: #a0dc42;
+    transform: scale(1.1);
+  }
+}
