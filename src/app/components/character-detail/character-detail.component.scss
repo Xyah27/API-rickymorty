@@ -94,11 +94,11 @@
   box-shadow: 0 4px 24px rgba(0,0,0,0.35);
   cursor: pointer;
   transition: box-shadow 0.2s, border-color 0.2s, background 0.2s;
+  padding: 0;
 
-  ion-icon {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: bold;
+  svg {
+    display: block;
+    margin: auto;
   }
 
   &:hover {

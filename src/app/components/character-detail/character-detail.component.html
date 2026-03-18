@@ -11,7 +11,10 @@
 
 <!-- Botón flotante X para cerrar -->
 <button class="close-fab" (click)="dismiss()" aria-label="Cerrar">
-  <ion-icon name="close"></ion-icon>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:auto;">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
 </button>
 
 <ion-content class="ion-padding" *ngIf="character">
