@@ -1,0 +1,86 @@
+// Rick & Morty Portal Theme
+// ─────────────────────────
+
+:root {
+  --ion-color-primary: #8BCF21;
+  --ion-color-primary-rgb: 139, 207, 33;
+  --ion-color-primary-contrast: #1a1a1a;
+  --ion-color-primary-contrast-rgb: 26, 26, 26;
+  --ion-color-primary-shade: #2F9331;
+  --ion-color-primary-tint: #a0dc42;
+
+  --ion-color-secondary: #477385;
+  --ion-color-secondary-rgb: 71, 115, 133;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #3c6575;
+  --ion-color-secondary-tint: #598191;
+
+  --ion-color-tertiary: #83D2E4;
+  --ion-color-tertiary-rgb: 131, 210, 228;
+  --ion-color-tertiary-contrast: #1a1a1a;
+  --ion-color-tertiary-contrast-rgb: 26, 26, 26;
+  --ion-color-tertiary-shade: #6db9c9;
+  --ion-color-tertiary-tint: #95d9e8;
+
+  --ion-color-success: #2F9331;
+  --ion-color-success-rgb: 47, 147, 49;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28812b;
+  --ion-color-success-tint: #449e46;
+
+  --ion-color-warning: #E5D29F;
+  --ion-color-warning-rgb: 229, 210, 159;
+  --ion-color-warning-contrast: #1a1a1a;
+  --ion-color-warning-contrast-rgb: 26, 26, 26;
+  --ion-color-warning-shade: #cab98c;
+  --ion-color-warning-tint: #e8d7a9;
+
+  --ion-color-danger: #ef5350;
+  --ion-color-danger-rgb: 239, 83, 80;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d24946;
+  --ion-color-danger-tint: #f16462;
+
+  --ion-color-medium: #8e8ea0;
+  --ion-color-medium-rgb: 142, 142, 160;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #7d7d8d;
+  --ion-color-medium-tint: #9999aa;
+
+  --ion-color-light: #2d2d38;
+  --ion-color-light-rgb: 45, 45, 56;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
+  --ion-color-light-shade: #262630;
+  --ion-color-light-tint: #42424d;
+}
+
+// ── Force dark mode globally ──
+body {
+  --ion-background-color: #1a1c1e;
+  --ion-background-color-rgb: 26, 28, 30;
+
+  --ion-text-color: #E7E0DB;
+  --ion-text-color-rgb: 231, 224, 219;
+
+  --ion-card-background: #242628;
+  --ion-item-background: #242628;
+
+  --ion-toolbar-background: #1e2022;
+  --ion-toolbar-color: #E7E0DB;
+
+  --ion-tab-bar-background: #161819;
+  --ion-tab-bar-color: #8e8ea0;
+  --ion-tab-bar-color-selected: #8BCF21;
+  --ion-tab-bar-border-color: rgba(139, 207, 33, 0.15);
+
+  --ion-border-color: rgba(139, 207, 33, 0.1);
+}
+
+ion-content {
+  --background: #1a1c1e;
+}

@@ -1,0 +1,13 @@
+:host {
+  ion-content {
+    --padding-top: 8px;
+  }
+}
+
+.end-message {
+  margin: 16px;
+  ion-label {
+    color: #8e8ea0;
+    font-style: italic;
+  }
+}

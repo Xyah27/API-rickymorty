@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Todos los Personajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @for (personaje of personajes; track personaje.id) {
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="personaje.image" />
+      </ion-avatar>
+      <ion-label>
+        <strong>{{ personaje.name }}</strong><br />
+        {{ personaje.species }} - {{ personaje.status }}
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="toggleFavorito(personaje)"
+        [class.is-fav]="esFavorito(personaje)">
+        <ion-icon
+          name="star"
+          [style.color]="esFavorito(personaje) ? '#FFD700' : '#888888'"
+          style="font-size: 1.6rem;"
+          slot="icon-only">
+        </ion-icon>
+      </ion-button>
+    </ion-item>
+  }
+
+  @if (!allLoaded) {
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando más personajes...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  } @else {
+    <ion-item lines="none" class="end-message">
+      <ion-label class="ion-text-center" color="medium">
+        No hay más personajes por cargar
+      </ion-label>
+    </ion-item>
+  }
+</ion-content>

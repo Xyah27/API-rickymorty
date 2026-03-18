@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar><ion-title>Escanear QR</ion-title></ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Botón escanear / detener -->
+  <ion-button expand="block" color="primary"
+              (click)="startScan()" *ngIf="!scanning">
+    <ion-icon name="camera-outline" slot="start"></ion-icon>
+    Abrir cámara
+  </ion-button>
+
+  <ion-button expand="block" color="danger"
+              (click)="stopScan()" *ngIf="scanning">
+    <ion-icon name="stop-circle-outline" slot="start"></ion-icon>
+    Cerrar cámara
+  </ion-button>
+
+  <!-- Vista previa de cámara -->
+  <div *ngIf="scanning" class="camera-preview">
+    <video id="qr-video" autoplay playsinline class="camera-video"></video>
+    <div class="camera-overlay">
+      <div class="scan-frame"></div>
+    </div>
+    <p class="camera-hint">Apunta al código QR — se guarda automáticamente</p>
+  </div>
+
+  <!-- Mensaje de QR detectado -->
+  <div *ngIf="scanMessage" class="scan-result">
+    <ion-icon name="checkmark-circle" class="scan-result-icon"></ion-icon>
+    {{ scanMessage }}
+  </div>
+
+  <!-- Input manual -->
+  <ion-item class="manual-input" lines="none">
+    <ion-icon name="qr-code-outline" slot="start" color="medium"></ion-icon>
+    <ion-input
+      [(ngModel)]="manualCode"
+      placeholder="Pega una URL o código QR..."
+      (keyup.enter)="saveManualScan()"
+      clearInput>
+    </ion-input>
+    <ion-button slot="end" fill="solid" color="primary" (click)="saveManualScan()" [disabled]="!manualCode.trim()">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Guardar
+    </ion-button>
+  </ion-item>
+
+  <!-- Mapa del scan seleccionado -->
+  <ion-card *ngIf="selectedScan" class="map-card">
+    <ion-card-header>
+      <ion-card-title class="map-title">📍 Ubicación del escaneo</ion-card-title>
+    </ion-card-header>
+    <div id="scan-map" class="scan-map"></div>
+    <ion-card-content>
+      <p *ngIf="isUrl(selectedScan.code)">
+        <strong>URL:</strong>
+        <a [href]="selectedScan.code" target="_blank" rel="noopener" class="scan-url">
+          {{ selectedScan.code }}
+        </a>
+      </p>
+      <p *ngIf="!isUrl(selectedScan.code)"><strong>Código:</strong> {{ selectedScan.code }}</p>
+      <p><strong>Lat:</strong> {{ selectedScan.latitude | number:'1.6-6' }}, <strong>Lng:</strong> {{ selectedScan.longitude | number:'1.6-6' }}</p>
+      <p><small>{{ selectedScan.timestamp | date:'medium' }}</small></p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Historial -->
+  <h3 *ngIf="scans.length" class="section-title">Historial de escaneos ({{ scans.length }})</h3>
+
+  <ion-list *ngIf="scans.length">
+    <ion-item *ngFor="let s of scans" (click)="showOnMap(s)" button>
+      <ion-icon [name]="isUrl(s.code) ? 'link-outline' : 'qr-code-outline'" slot="start" class="scan-icon"></ion-icon>
+      <ion-label>
+        <strong>{{ s.code }}</strong>
+        <p>📍 {{ s.latitude | number:'1.4-4' }}, {{ s.longitude | number:'1.4-4' }}</p>
+        <p><small>{{ s.timestamp | date:'medium' }}</small></p>
+      </ion-label>
+      <ion-button fill="clear" slot="end" (click)="removeScan(s); $event.stopPropagation()">
+        <ion-icon name="trash-outline" class="trash-icon" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <p *ngIf="!scans.length" class="empty-message ion-text-center ion-padding">
+    No hay escaneos guardados aún. Escanea un QR o pega una URL.
+  </p>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @if (favoritos.length > 0) {
+    @for (personaje of favoritos; track personaje.id) {
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="personaje.image" />
+        </ion-avatar>
+        <ion-label>
+          <strong>{{ personaje.name }}</strong><br />
+          {{ personaje.species }} - {{ personaje.status }}
+        </ion-label>
+        <ion-button fill="clear" slot="end" (click)="toggleFavorite(personaje)" class="is-fav">
+          <ion-icon name="star"
+            style="color: #FFD700; font-size: 1.6rem;"
+            slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-item>
+    }
+  } @else {
+    <ion-item>
+      <ion-label>No hay personajes favoritos aún.</ion-label>
+    </ion-item>
+  }
+</ion-content>

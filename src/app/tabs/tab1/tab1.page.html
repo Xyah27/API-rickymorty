@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Carrusel de imágenes -->
+  <app-swiper [images]="images"></app-swiper>
+
+  <!-- Botón para tomar foto -->
+  <ion-button expand="block" color="primary" (click)="takePicture()">
+    <ion-icon name="camera-outline" slot="start"></ion-icon>
+    Tomar Foto
+  </ion-button>
+
+  <!-- Mapa -->
+  <h2>Ubicación en mapa</h2>
+  <div id="map"></div>
+
+  <!-- Fotos tomadas -->
+  <h2>Fotos tomadas</h2>
+  <ion-card *ngFor="let photo of photos">
+    <img [src]="photo" />
+    <ion-card-content>
+      Foto tomada con la cámara
+    </ion-card-content>
+  </ion-card>
+</ion-content>

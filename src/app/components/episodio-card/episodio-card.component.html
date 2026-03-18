@@ -1,0 +1,33 @@
+<ion-card *ngIf="episodio" class="episode-card" [class.expanded]="expanded">
+  <ion-card-header (click)="toggle()" class="clickable-header">
+    <div class="episode-header">
+      <div>
+        <ion-card-title>{{ episodio.name }}</ion-card-title>
+        <ion-card-subtitle>{{ episodio.episode }} &middot; {{ episodio.air_date }}</ion-card-subtitle>
+      </div>
+      <div class="header-right">
+        <ion-badge color="tertiary">{{ episodio.characters.length }}</ion-badge>
+        <ion-icon [name]="expanded ? 'chevron-up' : 'chevron-down'" class="chevron-icon"></ion-icon>
+      </div>
+    </div>
+  </ion-card-header>
+
+  <ion-card-content *ngIf="expanded">
+    <ion-spinner *ngIf="loadingChars" name="crescent" class="loading-spinner"></ion-spinner>
+
+    <ion-list *ngIf="!loadingChars && characters.length > 0" lines="none" class="characters-list">
+      <ion-item *ngFor="let char of characters" (click)="openCharacterDetail(char)" button detail>
+        <ion-avatar slot="start">
+          <img [src]="char.image" [alt]="char.name" />
+        </ion-avatar>
+        <ion-label>
+          <strong>{{ char.name }}</strong>
+          <p>{{ char.species }} &middot;
+            <span [style.color]="getStatusColor(char.status)">&#9679;</span>
+            {{ char.status }}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

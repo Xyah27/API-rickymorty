@@ -1,0 +1,184 @@
+.camera-preview {
+  margin: 12px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0a0a0c;
+  border: 1px solid rgba(139, 207, 33, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.camera-video {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.camera-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scan-frame {
+  width: 180px;
+  height: 180px;
+  border: 2px solid rgba(139, 207, 33, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3);
+  animation: pulse-frame 2s ease-in-out infinite;
+}
+
+@keyframes pulse-frame {
+  0%, 100% { border-color: rgba(139, 207, 33, 0.5); }
+  50% { border-color: rgba(139, 207, 33, 1); box-shadow: 0 0 0 4000px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 207, 33, 0.3); }
+}
+
+.scan-result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: rgba(139, 207, 33, 0.08);
+  border: 1px solid rgba(139, 207, 33, 0.25);
+  border-radius: 12px;
+  color: #c8e6a0;
+  font-size: 0.9rem;
+  word-break: break-all;
+  animation: fadeIn 0.3s ease;
+}
+
+.scan-result-icon {
+  color: #8BCF21;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.manual-input {
+  margin: 12px 0;
+  --background: rgba(139, 207, 33, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 207, 33, 0.1);
+
+  ion-input {
+    --color: #E7E0DB;
+    --placeholder-color: #8e8ea0;
+  }
+}
+
+ion-button[expand="block"] {
+  --border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 8px;
+
+  &[color="primary"] {
+    --background: linear-gradient(135deg, #2F9331, #8BCF21);
+    --box-shadow: 0 4px 14px rgba(139, 207, 33, 0.3);
+  }
+
+  &[color="danger"] {
+    --box-shadow: 0 4px 14px rgba(239, 83, 80, 0.3);
+  }
+}
+
+.map-card {
+  margin-top: 16px;
+  border-left: 4px solid #8BCF21;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.scan-map {
+  width: 100%;
+  height: 250px;
+  border-radius: 0 0 14px 14px;
+}
+
+ion-list {
+  background: transparent;
+
+  ion-item {
+    --background: rgba(36, 38, 40, 0.5);
+    margin-bottom: 4px;
+    border-radius: 10px;
+    transition: background 0.15s ease;
+
+    &:hover {
+      --background: rgba(139, 207, 33, 0.08);
+    }
+
+    ion-label {
+      strong {
+        color: #E7E0DB;
+        word-break: break-all;
+      }
+      p {
+        color: #b0b0a8;
+      }
+    }
+  }
+}
+
+.camera-hint {
+  text-align: center;
+  color: #8e8ea0;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.map-title {
+  font-size: 1rem;
+  color: #E5D29F;
+}
+
+.scan-url {
+  color: #8BCF21;
+  word-break: break-all;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: #a0dc42;
+  }
+}
+
+.section-title {
+  margin-top: 20px;
+  padding: 0 4px;
+  color: #E5D29F;
+  font-size: 1rem;
+}
+
+.scan-icon {
+  color: #8BCF21;
+  font-size: 1.4rem;
+}
+
+.trash-icon {
+  color: #8e8ea0;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #ef5350;
+  }
+}
+
+.empty-message {
+  color: #8e8ea0;
+  font-style: italic;
+}
+  

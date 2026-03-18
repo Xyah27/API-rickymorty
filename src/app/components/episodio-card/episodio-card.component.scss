@@ -1,0 +1,109 @@
+.episode-card {
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  margin: 8px 16px;
+  border: 1px solid rgba(139, 207, 33, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &.expanded {
+    box-shadow: 0 0 20px rgba(139, 207, 33, 0.25);
+    border-color: rgba(139, 207, 33, 0.2);
+  }
+
+  ion-card-header {
+    --background: transparent;
+  }
+
+  ion-card-title {
+    color: #E7E0DB;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  ion-card-subtitle {
+    color: #b0b0a8;
+    font-size: 0.85rem;
+  }
+}
+
+.episode-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  ion-badge {
+    --background: rgba(139, 207, 33, 0.2);
+    --color: #8BCF21;
+    font-size: 0.75rem;
+  }
+
+  ion-icon {
+    color: #8BCF21 !important;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+  }
+}
+
+.characters-list {
+  background: transparent;
+  padding: 0;
+
+  ion-item {
+    --background: rgba(139, 207, 33, 0.04);
+    --padding-start: 8px;
+    --inner-padding-end: 8px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    transition: background 0.2s;
+
+    &:hover {
+      --background: rgba(139, 207, 33, 0.1);
+    }
+
+    ion-avatar {
+      width: 40px;
+      height: 40px;
+
+      img {
+        border: 2px solid rgba(139, 207, 33, 0.2);
+      }
+    }
+
+    strong {
+      color: #E7E0DB;
+    }
+
+    p {
+      color: #b0b0a8;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.clickable-header {
+  cursor: pointer;
+}
+
+.chevron-icon {
+  color: #8BCF21;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.loading-spinner {
+  display: block;
+  margin: 12px auto;
+  color: #8BCF21;
+}

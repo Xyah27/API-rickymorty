@@ -1,0 +1,19 @@
+<swiper-container
+  slides-per-view="1"
+  space-between="10"
+  pagination="true"
+  loop="true"
+  autoplay-delay="3500"
+  autoplay-disable-on-interaction="false"
+  style="width: 100%; height: 360px; border-radius: 16px; overflow: hidden;">
+  
+  <swiper-slide *ngFor="let img of images">
+    <div class="slide-wrapper">
+      <img [src]="img.url" alt="Imagen" />
+      <div class="overlay">
+        <h3>{{ img.title }}</h3>
+        <p>{{ img.description }}</p>
+      </div>
+    </div>
+  </swiper-slide>
+</swiper-container>

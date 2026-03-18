@@ -1,0 +1,24 @@
+ion-tab-bar {
+  border-top: 1px solid rgba(139, 207, 33, 0.12);
+  padding: 4px 0 8px;
+  --background: #161819;
+
+  ion-tab-button {
+    --color: #8e8ea0;
+    --color-selected: #8BCF21;
+    font-size: 0.7rem;
+    letter-spacing: 0.2px;
+    transition: transform 0.15s ease;
+
+    &.tab-selected {
+      ion-icon {
+        filter: drop-shadow(0 0 6px rgba(139, 207, 33, 0.5));
+      }
+    }
+
+    ion-icon {
+      font-size: 1.4rem;
+      margin-bottom: 2px;
+    }
+  }
+}

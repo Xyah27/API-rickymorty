@@ -1,0 +1,45 @@
+#map {
+  width: calc(100% - 32px);
+  height: 300px;
+  margin: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(139, 207, 33, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+ion-button[expand="block"] {
+  --background: linear-gradient(135deg, #2F9331, #8BCF21);
+  --border-radius: 12px;
+  --box-shadow: 0 4px 14px rgba(139, 207, 33, 0.3);
+  margin: 16px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+h2 {
+  color: #E5D29F;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 20px 16px 8px;
+}
+
+ion-card {
+  margin: 8px 16px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    border-radius: 14px 14px 0 0;
+  }
+
+  ion-card-content {
+    color: #b0b0a8;
+    font-size: 0.9rem;
+  }
+}
+  

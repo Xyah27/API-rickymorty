@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Episodios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  @for (ep of episodios; track ep.id) {
+    <app-episodio-card [episodio]="ep"></app-episodio-card>
+  }
+
+  @if (!allLoaded) {
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Cargando más episodios...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  } @else {
+    <ion-item lines="none">
+      <ion-label class="ion-text-center" color="medium">
+        No hay más episodios por cargar
+      </ion-label>
+    </ion-item>
+  }
+</ion-content>
+

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Corte2 Project</string>
+    <string name="title_activity_main">Corte2 Project</string>
+    <string name="package_name">com.juanjose.corte2app</string>
+    <string name="custom_url_scheme">com.juanjose.corte2app</string>
+</resources>
